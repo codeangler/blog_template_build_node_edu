@@ -20,6 +20,9 @@ const users = require('./routes/users');
 
 const app = express();
 
+// Add MomentJs to Express instance
+app.locals.moment = moment;
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
