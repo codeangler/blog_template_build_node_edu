@@ -3,22 +3,26 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
   },
   "dependencies": {
     "body-parser": "~1.15.2",
+    "connect-flash": "*",
     "cookie-parser": "~1.4.3",
     "debug": "~2.2.0",
     "express": "~4.14.0",
-    "jade": "~1.11.0",
-    "morgan": "~1.7.0",
-    "monk": "~1.0.1",
-    "connect-flash": "*",
-    "express-validator": "*",
-    "express-session": "*",
     "express-messages": "*",
-    "multer": "*",
+    "express-session": "*",
+    "express-validator": "*",
+    "jade": "~1.11.0",
+    "kerberos": "0.0.22",
     "moment": "*",
+    "mongodb": "^2.0.55",
+    "mongodb-core": "^1.2.31",
+    "monk": "https://github.com/vccabral/monk.git",
+    "morgan": "~1.7.0",
+    "multer": "*",
     "serve-favicon": "~2.3.0"
   }
 }
