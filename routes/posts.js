@@ -26,7 +26,9 @@ router.post('/add', upload.single('mainimage'), function(req, res, next) {
   const body = req.body.body;
   const author = req.body.author;
   const date = new Date();
-
+  // Why does const not work
+  // const mainImage = req.file ? req.file.filename : 'noimage.jpg'
+  
   if(req.file) {
     console.log('Image File Upload');
     var mainimage = req.file.filename;

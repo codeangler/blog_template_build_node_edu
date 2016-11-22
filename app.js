@@ -17,6 +17,7 @@ const db = require('monk')('localhost/nodeblog');
 
 const index = require('./routes/index');
 const posts = require('./routes/posts');
+const categories = require('./routes/categories');
 
 const app = express();
 
@@ -75,6 +76,7 @@ app.use((req, res, next) => {
 
 app.use('/', index);
 app.use('/posts', posts);
+app.use('/categories', categories);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
