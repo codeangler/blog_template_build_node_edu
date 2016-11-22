@@ -1,6 +1,6 @@
 # node_blog_template_build_edu
 
-I built an app that demonstrates user registration, login, and members only area. The views conditionally display navigation menus dependant on status of user.  Client recieve feedback messages on success / failure of registration or login or logout.  Passport is used for localstrategy.  Bcryptjs is used for hashing passwords.  Jade is used for templating views.  MongoDB is used with Mongoose. Bootstrap 3 is used for quick and simple design
+I built an app that demonstrates allowing people to post articles, with image, and then add comments. Jade is used for templating views.  MongoDB is used with Monk. Bootstrap 3 is used for quick and simple design
 
 ES6 refactoring completed
   object literal property shorthand
@@ -14,7 +14,7 @@ ES6 refactoring completed
   <li>CK_Editor</li>
   <li>multer</li>
   <li>MongoDB</li>
-  <li>Mongoose</li>
+  <li>MOnk</li>
   <li>express-generator</li>
   <li>Bootstrap</li>
   <li>ES6</li>
