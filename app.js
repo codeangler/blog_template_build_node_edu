@@ -20,10 +20,14 @@ const posts = require('./routes/posts');
 const categories = require('./routes/categories');
 
 const app = express();
+// ######## Global Variables
 
 // Add MomentJs to Express instance
 app.locals.moment = moment;
-
+app.locals.truncateText = (text, length) => {
+  const truncateText = text.substring(0, length);
+  return truncateText;
+} 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');

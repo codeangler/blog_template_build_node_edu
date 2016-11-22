@@ -71,6 +71,11 @@ nav a.current, nav a:hover{
   text-decoration: none;
 }
 
+
+.post img {
+  width: 100%;
+}
+
 .meta {
   padding: 7px;
   margin: 0 0 10px 0;

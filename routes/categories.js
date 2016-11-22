@@ -4,6 +4,19 @@ const router = express.Router();
 const mongo = require('mongodb');
 const db = require('monk')('localhost/nodeblog');
 
+// Return selection of post by category
+router.get('/show/:category', function(req, res, next) {
+  const posts = db.get('posts');
+
+  posts.find({category: req.params.category},{}, (err, posts)=>{
+    res.render('index', {
+      'title': req.params.category,
+      'posts': posts
+    });
+  });
+});
+
+
 /* GET Categories-+ */
 router.get('/add', function(req, res, next) {
   res.render('addCategory', {
