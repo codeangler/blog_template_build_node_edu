@@ -19,23 +19,23 @@ router.get('/add', function(req, res, next) {
   
 });
 
-router.post('/add', upload.single('mainimage'), function(req, res, next) {
+router.post('/add', upload.single('mainImage'), function(req, res, next) {
   // Get the form values
   const title = req.body.title;
   const category = req.body.category;
   const body = req.body.body;
   const author = req.body.author;
   const date = new Date();
-  // Why does const not work
-  // const mainImage = req.file ? req.file.filename : 'noimage.jpg'
-  
-  if(req.file) {
-    console.log('Image File Upload');
-    var mainimage = req.file.filename;
-  } else {
-    console.log('Failed to Upload File');
-    var mainimage = 'noimage.jpg';
-  }
+  // Why does const not work?  block scope vs functional scoping?
+  const mainImage = req.file ? req.file.filename : 'noimage.jpg'
+
+  // if(req.file) {
+  //   console.log('Image File Upload');
+  //   var mainimage = req.file.filename;
+  // } else {
+  //   console.log('Failed to Upload File');
+  //   var mainimage = 'noimage.jpg';
+  // }
 
   //Form Validation
   req.checkBody('title', "Title field is required").notEmpty();
@@ -53,15 +53,8 @@ router.post('/add', upload.single('mainimage'), function(req, res, next) {
     // POST to MongoDB
     console.log('posting');
     const posts = db.get('posts');
-    posts.insert({
-      'title': title,
-      'body': body,
-      'category': category,
-      'date': date,
-      'date': date,
-      'author': author,
-      'mainimage': mainimage
-    }, (err, post) => {
+    const payload = { title, body, category, date, author, mainImage };
+    posts.insert( payload, (err, post) => {
       if(err) {
         res.send(err);
       } else {
