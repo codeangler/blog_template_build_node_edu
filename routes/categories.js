@@ -29,8 +29,8 @@ router.post('/add', function(req, res, next) {
   } else {
     // POST to MongoDB
     console.log('posting');
-    const posts = db.get('posts');
-    posts.insert({
+    const categories = db.get('categories');
+    categories.insert({
       'name': name
     }, (err, post) => {
       if(err) {

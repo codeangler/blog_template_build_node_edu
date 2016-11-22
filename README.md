@@ -2,6 +2,11 @@
 
 I built an app that demonstrates user registration, login, and members only area. The views conditionally display navigation menus dependant on status of user.  Client recieve feedback messages on success / failure of registration or login or logout.  Passport is used for localstrategy.  Bcryptjs is used for hashing passwords.  Jade is used for templating views.  MongoDB is used with Mongoose. Bootstrap 3 is used for quick and simple design
 
+ES6 refactoring completed
+  object literal property shorthand
+  const / let
+  
+
 <ul>
   <li>NodeJS</li>
   <li>Express</li>
