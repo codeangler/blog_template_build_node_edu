@@ -8,7 +8,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const flash = require('connect-flash');
 const multer = require('multer');
-const upload = multer({ dest: 'uploads/' })
+const upload = multer({ dest: 'uploads/' });
 const moment = require('moment');
 const expressValidator = require('express-validator');
 
